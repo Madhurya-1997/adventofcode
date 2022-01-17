@@ -1,5 +1,5 @@
 /**
- * Solution 1
+ * Solution 1 - Day 1
  */
 let input = `141
 152
@@ -2018,11 +2018,22 @@ function solution1(input) {
 console.log(solution1(input))
 
 /**
- * Solution 2 
+ * Solution 2 - Day 1
  */
-function solution2() {
+function solution2(input) {
+    let count = 0;
 
+    for (let i = 1; i < input.length; i++) {
+        let currSum = input[i] + input[i + 1] + input[i + 2]
+        let prevSum = input[i - 1] + input[i] + input[i + 1]
+
+        if (currSum > prevSum) {
+            count++;
+        }
+    }
+    return count;
 }
+console.log(solution2(input))
 
 
 
